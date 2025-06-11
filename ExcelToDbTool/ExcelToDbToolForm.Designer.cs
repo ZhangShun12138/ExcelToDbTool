@@ -54,6 +54,7 @@
             inputBox = new TextBox();
             button1 = new Button();
             tabPage3 = new TabPage();
+            tableNamesLabel = new Label();
             deleteTableCheckBox = new CheckBox();
             button3 = new Button();
             outputPathLabel = new Label();
@@ -62,7 +63,6 @@
             endFlagLabel = new Label();
             endTextBox = new TextBox();
             panel1 = new Panel();
-            tableNamesLabel = new Label();
             excelControl.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -328,8 +328,18 @@
             tabPage3.Text = "Read";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // tableNamesLabel
+            // 
+            tableNamesLabel.Location = new Point(12, 133);
+            tableNamesLabel.Name = "tableNamesLabel";
+            tableNamesLabel.Size = new Size(85, 26);
+            tableNamesLabel.TabIndex = 17;
+            tableNamesLabel.Text = "tableNames";
+            tableNamesLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // deleteTableCheckBox
             // 
+            deleteTableCheckBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             deleteTableCheckBox.AutoSize = true;
             deleteTableCheckBox.Location = new Point(494, 134);
             deleteTableCheckBox.Name = "deleteTableCheckBox";
@@ -340,6 +350,7 @@
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button3.Location = new Point(494, 201);
             button3.Name = "button3";
             button3.Size = new Size(96, 26);
@@ -414,15 +425,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(606, 645);
             panel1.TabIndex = 21;
-            // 
-            // tableNamesLabel
-            // 
-            tableNamesLabel.Location = new Point(12, 133);
-            tableNamesLabel.Name = "tableNamesLabel";
-            tableNamesLabel.Size = new Size(85, 26);
-            tableNamesLabel.TabIndex = 17;
-            tableNamesLabel.Text = "tableNames";
-            tableNamesLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ExcelToDbToolForm
             // 
