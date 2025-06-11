@@ -1,6 +1,6 @@
 ﻿namespace ExcelToDbTool
 {
-    partial class Form1
+    partial class ExcelToDbToolForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -37,30 +37,32 @@
             uidTextBox = new TextBox();
             pwdTextBox = new TextBox();
             distanceTextBox = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
+            excelLabel = new Label();
+            sheetLabel = new Label();
+            outPathLabel = new Label();
+            dataLabel = new Label();
+            databaseLabel = new Label();
+            uidLabel = new Label();
+            pwdLabel = new Label();
+            distanceLabel = new Label();
             excelControl = new TabControl();
             tabPage1 = new TabPage();
             commonTableCheckBox = new CheckBox();
+            excelSelceButton = new Button();
             tabPage2 = new TabPage();
-            label9 = new Label();
+            inputLabel = new Label();
             inputBox = new TextBox();
             button1 = new Button();
             tabPage3 = new TabPage();
             deleteTableCheckBox = new CheckBox();
             button3 = new Button();
-            label10 = new Label();
+            outputPathLabel = new Label();
             tableNameBox = new TextBox();
             csvOutputPath = new TextBox();
-            label11 = new Label();
+            endFlagLabel = new Label();
             endTextBox = new TextBox();
             panel1 = new Panel();
+            tableNamesLabel = new Label();
             excelControl.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -81,9 +83,9 @@
             // excelTextBox
             // 
             excelTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            excelTextBox.Location = new Point(134, 24);
+            excelTextBox.Location = new Point(134, 23);
             excelTextBox.Name = "excelTextBox";
-            excelTextBox.Size = new Size(445, 23);
+            excelTextBox.Size = new Size(344, 23);
             excelTextBox.TabIndex = 2;
             // 
             // sheetTextBox
@@ -91,7 +93,7 @@
             sheetTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             sheetTextBox.Location = new Point(134, 78);
             sheetTextBox.Name = "sheetTextBox";
-            sheetTextBox.Size = new Size(445, 23);
+            sheetTextBox.Size = new Size(344, 23);
             sheetTextBox.TabIndex = 3;
             // 
             // outputPathTextBox
@@ -99,7 +101,7 @@
             outputPathTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             outputPathTextBox.Location = new Point(134, 133);
             outputPathTextBox.Name = "outputPathTextBox";
-            outputPathTextBox.Size = new Size(445, 23);
+            outputPathTextBox.Size = new Size(344, 23);
             outputPathTextBox.TabIndex = 4;
             // 
             // dataSourceTextBox
@@ -107,7 +109,7 @@
             dataSourceTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dataSourceTextBox.Location = new Point(138, 10);
             dataSourceTextBox.Name = "dataSourceTextBox";
-            dataSourceTextBox.Size = new Size(445, 23);
+            dataSourceTextBox.Size = new Size(344, 23);
             dataSourceTextBox.TabIndex = 5;
             dataSourceTextBox.Text = "LocalHost\\MSSQLSERVER";
             // 
@@ -116,7 +118,7 @@
             databaseTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             databaseTextBox.Location = new Point(138, 65);
             databaseTextBox.Name = "databaseTextBox";
-            databaseTextBox.Size = new Size(445, 23);
+            databaseTextBox.Size = new Size(344, 23);
             databaseTextBox.TabIndex = 6;
             // 
             // uidTextBox
@@ -124,7 +126,7 @@
             uidTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             uidTextBox.Location = new Point(138, 119);
             uidTextBox.Name = "uidTextBox";
-            uidTextBox.Size = new Size(445, 23);
+            uidTextBox.Size = new Size(344, 23);
             uidTextBox.TabIndex = 7;
             uidTextBox.Text = "sa";
             // 
@@ -133,7 +135,7 @@
             pwdTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pwdTextBox.Location = new Point(138, 173);
             pwdTextBox.Name = "pwdTextBox";
-            pwdTextBox.Size = new Size(445, 23);
+            pwdTextBox.Size = new Size(344, 23);
             pwdTextBox.TabIndex = 8;
             pwdTextBox.Text = "P@ssw0rd";
             // 
@@ -142,81 +144,81 @@
             distanceTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             distanceTextBox.Location = new Point(138, 228);
             distanceTextBox.Name = "distanceTextBox";
-            distanceTextBox.Size = new Size(445, 23);
+            distanceTextBox.Size = new Size(344, 23);
             distanceTextBox.TabIndex = 9;
             distanceTextBox.Text = "3";
             // 
-            // label1
+            // excelLabel
             // 
-            label1.Location = new Point(8, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(112, 21);
-            label1.TabIndex = 10;
-            label1.Text = "Excel";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            excelLabel.Location = new Point(8, 24);
+            excelLabel.Name = "excelLabel";
+            excelLabel.Size = new Size(112, 21);
+            excelLabel.TabIndex = 10;
+            excelLabel.Text = "Excel";
+            excelLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // sheetLabel
             // 
-            label2.Location = new Point(8, 78);
-            label2.Name = "label2";
-            label2.Size = new Size(112, 21);
-            label2.TabIndex = 11;
-            label2.Text = "Sheet";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            sheetLabel.Location = new Point(8, 78);
+            sheetLabel.Name = "sheetLabel";
+            sheetLabel.Size = new Size(112, 21);
+            sheetLabel.TabIndex = 11;
+            sheetLabel.Text = "Sheet";
+            sheetLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // outPathLabel
             // 
-            label3.Location = new Point(8, 133);
-            label3.Name = "label3";
-            label3.Size = new Size(112, 21);
-            label3.TabIndex = 12;
-            label3.Text = "OutPath";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            outPathLabel.Location = new Point(8, 133);
+            outPathLabel.Name = "outPathLabel";
+            outPathLabel.Size = new Size(112, 21);
+            outPathLabel.TabIndex = 12;
+            outPathLabel.Text = "OutPath";
+            outPathLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // dataLabel
             // 
-            label4.Location = new Point(12, 10);
-            label4.Name = "label4";
-            label4.Size = new Size(76, 26);
-            label4.TabIndex = 13;
-            label4.Text = "Data Source";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            dataLabel.Location = new Point(12, 10);
+            dataLabel.Name = "dataLabel";
+            dataLabel.Size = new Size(76, 26);
+            dataLabel.TabIndex = 13;
+            dataLabel.Text = "Data Source";
+            dataLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // databaseLabel
             // 
-            label5.Location = new Point(12, 65);
-            label5.Name = "label5";
-            label5.Size = new Size(76, 26);
-            label5.TabIndex = 14;
-            label5.Text = "Database";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            databaseLabel.Location = new Point(12, 65);
+            databaseLabel.Name = "databaseLabel";
+            databaseLabel.Size = new Size(76, 26);
+            databaseLabel.TabIndex = 14;
+            databaseLabel.Text = "Database";
+            databaseLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // uidLabel
             // 
-            label6.Location = new Point(12, 119);
-            label6.Name = "label6";
-            label6.Size = new Size(76, 26);
-            label6.TabIndex = 15;
-            label6.Text = "Uid";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
+            uidLabel.Location = new Point(12, 119);
+            uidLabel.Name = "uidLabel";
+            uidLabel.Size = new Size(76, 26);
+            uidLabel.TabIndex = 15;
+            uidLabel.Text = "Uid";
+            uidLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // pwdLabel
             // 
-            label7.Location = new Point(12, 173);
-            label7.Name = "label7";
-            label7.Size = new Size(76, 26);
-            label7.TabIndex = 16;
-            label7.Text = "Pwd";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
+            pwdLabel.Location = new Point(12, 173);
+            pwdLabel.Name = "pwdLabel";
+            pwdLabel.Size = new Size(76, 26);
+            pwdLabel.TabIndex = 16;
+            pwdLabel.Text = "Pwd";
+            pwdLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // distanceLabel
             // 
-            label8.Location = new Point(12, 228);
-            label8.Name = "label8";
-            label8.Size = new Size(76, 26);
-            label8.TabIndex = 17;
-            label8.Text = "Distance";
-            label8.TextAlign = ContentAlignment.MiddleCenter;
+            distanceLabel.Location = new Point(12, 228);
+            distanceLabel.Name = "distanceLabel";
+            distanceLabel.Size = new Size(76, 26);
+            distanceLabel.TabIndex = 17;
+            distanceLabel.Text = "Distance";
+            distanceLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // excelControl
             // 
@@ -232,11 +234,12 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(commonTableCheckBox);
             tabPage1.Controls.Add(excelTextBox);
-            tabPage1.Controls.Add(label1);
-            tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(commonTableCheckBox);
+            tabPage1.Controls.Add(excelSelceButton);
+            tabPage1.Controls.Add(excelLabel);
+            tabPage1.Controls.Add(sheetLabel);
+            tabPage1.Controls.Add(outPathLabel);
             tabPage1.Controls.Add(button2);
             tabPage1.Controls.Add(outputPathTextBox);
             tabPage1.Controls.Add(sheetTextBox);
@@ -258,9 +261,20 @@
             commonTableCheckBox.Text = "CommonTable";
             commonTableCheckBox.UseVisualStyleBackColor = true;
             // 
+            // excelSelceButton
+            // 
+            excelSelceButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            excelSelceButton.Location = new Point(504, 23);
+            excelSelceButton.Name = "excelSelceButton";
+            excelSelceButton.Size = new Size(75, 23);
+            excelSelceButton.TabIndex = 14;
+            excelSelceButton.Text = "选择";
+            excelSelceButton.UseVisualStyleBackColor = true;
+            excelSelceButton.Click += excelSelceButton_Click;
+            // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(label9);
+            tabPage2.Controls.Add(inputLabel);
             tabPage2.Controls.Add(inputBox);
             tabPage2.Controls.Add(button1);
             tabPage2.Location = new Point(4, 26);
@@ -271,21 +285,21 @@
             tabPage2.Text = "File";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // inputLabel
             // 
-            label9.Location = new Point(12, 61);
-            label9.Name = "label9";
-            label9.Size = new Size(76, 26);
-            label9.TabIndex = 19;
-            label9.Text = "Input";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
+            inputLabel.Location = new Point(12, 61);
+            inputLabel.Name = "inputLabel";
+            inputLabel.Size = new Size(76, 26);
+            inputLabel.TabIndex = 19;
+            inputLabel.Text = "Input";
+            inputLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // inputBox
             // 
             inputBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            inputBox.Location = new Point(134, 61);
+            inputBox.Location = new Point(134, 63);
             inputBox.Name = "inputBox";
-            inputBox.Size = new Size(445, 23);
+            inputBox.Size = new Size(344, 23);
             inputBox.TabIndex = 1;
             // 
             // button1
@@ -300,9 +314,10 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(tableNamesLabel);
             tabPage3.Controls.Add(deleteTableCheckBox);
             tabPage3.Controls.Add(button3);
-            tabPage3.Controls.Add(label10);
+            tabPage3.Controls.Add(outputPathLabel);
             tabPage3.Controls.Add(tableNameBox);
             tabPage3.Controls.Add(csvOutputPath);
             tabPage3.Location = new Point(4, 26);
@@ -316,7 +331,7 @@
             // deleteTableCheckBox
             // 
             deleteTableCheckBox.AutoSize = true;
-            deleteTableCheckBox.Location = new Point(14, 144);
+            deleteTableCheckBox.Location = new Point(494, 134);
             deleteTableCheckBox.Name = "deleteTableCheckBox";
             deleteTableCheckBox.Size = new Size(96, 21);
             deleteTableCheckBox.TabIndex = 16;
@@ -325,32 +340,32 @@
             // 
             // button3
             // 
-            button3.Location = new Point(12, 189);
+            button3.Location = new Point(494, 201);
             button3.Name = "button3";
-            button3.Size = new Size(76, 26);
+            button3.Size = new Size(96, 26);
             button3.TabIndex = 15;
             button3.Text = "Run";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // label10
+            // outputPathLabel
             // 
-            label10.Location = new Point(12, 12);
-            label10.Name = "label10";
-            label10.Size = new Size(76, 26);
-            label10.TabIndex = 14;
-            label10.Text = "OutputPath";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
+            outputPathLabel.Location = new Point(12, 12);
+            outputPathLabel.Name = "outputPathLabel";
+            outputPathLabel.Size = new Size(76, 26);
+            outputPathLabel.TabIndex = 14;
+            outputPathLabel.Text = "OutputPath";
+            outputPathLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableNameBox
             // 
             tableNameBox.AcceptsReturn = true;
             tableNameBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            tableNameBox.Location = new Point(138, 61);
+            tableNameBox.Location = new Point(138, 63);
             tableNameBox.Multiline = true;
             tableNameBox.Name = "tableNameBox";
             tableNameBox.ScrollBars = ScrollBars.Vertical;
-            tableNameBox.Size = new Size(445, 166);
+            tableNameBox.Size = new Size(340, 166);
             tableNameBox.TabIndex = 1;
             // 
             // csvOutputPath
@@ -358,40 +373,41 @@
             csvOutputPath.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             csvOutputPath.Location = new Point(138, 12);
             csvOutputPath.Name = "csvOutputPath";
-            csvOutputPath.Size = new Size(445, 23);
+            csvOutputPath.Size = new Size(340, 23);
             csvOutputPath.TabIndex = 0;
             // 
-            // label11
+            // endFlagLabel
             // 
-            label11.Location = new Point(12, 284);
-            label11.Name = "label11";
-            label11.Size = new Size(76, 26);
-            label11.TabIndex = 20;
-            label11.Text = "EndFlag";
-            label11.TextAlign = ContentAlignment.MiddleCenter;
+            endFlagLabel.Location = new Point(12, 284);
+            endFlagLabel.Name = "endFlagLabel";
+            endFlagLabel.Size = new Size(76, 26);
+            endFlagLabel.TabIndex = 20;
+            endFlagLabel.Text = "EndFlag";
+            endFlagLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // endTextBox
             // 
             endTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             endTextBox.Location = new Point(138, 284);
             endTextBox.Name = "endTextBox";
-            endTextBox.Size = new Size(445, 23);
+            endTextBox.Size = new Size(344, 23);
             endTextBox.TabIndex = 19;
             // 
             // panel1
             // 
-            panel1.Controls.Add(label11);
+            panel1.AutoScroll = true;
+            panel1.Controls.Add(endFlagLabel);
             panel1.Controls.Add(endTextBox);
             panel1.Controls.Add(excelControl);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label7);
+            panel1.Controls.Add(distanceLabel);
+            panel1.Controls.Add(dataLabel);
+            panel1.Controls.Add(pwdLabel);
             panel1.Controls.Add(pwdTextBox);
             panel1.Controls.Add(distanceTextBox);
-            panel1.Controls.Add(label6);
+            panel1.Controls.Add(uidLabel);
             panel1.Controls.Add(uidTextBox);
             panel1.Controls.Add(databaseTextBox);
-            panel1.Controls.Add(label5);
+            panel1.Controls.Add(databaseLabel);
             panel1.Controls.Add(dataSourceTextBox);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -399,13 +415,22 @@
             panel1.Size = new Size(606, 645);
             panel1.TabIndex = 21;
             // 
-            // Form1
+            // tableNamesLabel
+            // 
+            tableNamesLabel.Location = new Point(12, 133);
+            tableNamesLabel.Name = "tableNamesLabel";
+            tableNamesLabel.Size = new Size(85, 26);
+            tableNamesLabel.TabIndex = 17;
+            tableNamesLabel.Text = "tableNames";
+            tableNamesLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ExcelToDbToolForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(606, 645);
             Controls.Add(panel1);
-            Name = "Form1";
+            Name = "ExcelToDbToolForm";
             Text = "Form1";
             excelControl.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
@@ -429,29 +454,31 @@
         private TextBox uidTextBox;
         private TextBox pwdTextBox;
         private TextBox distanceTextBox;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
+        private Label excelLabel;
+        private Label sheetLabel;
+        private Label outPathLabel;
+        private Label dataLabel;
+        private Label databaseLabel;
+        private Label uidLabel;
+        private Label pwdLabel;
+        private Label distanceLabel;
         private TabControl excelControl;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TabPage tabPage3;
-        private Label label9;
+        private Label inputLabel;
         private TextBox inputBox;
         private Button button1;
-        private Label label10;
+        private Label outputPathLabel;
         private TextBox tableNameBox;
         private TextBox csvOutputPath;
         private Button button3;
-        private Label label11;
+        private Label endFlagLabel;
         private TextBox endTextBox;
         private CheckBox commonTableCheckBox;
         private CheckBox deleteTableCheckBox;
         private Panel panel1;
+        private Button excelSelceButton;
+        private Label tableNamesLabel;
     }
 }

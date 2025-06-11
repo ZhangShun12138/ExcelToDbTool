@@ -6,11 +6,11 @@ using System.Diagnostics;
 
 namespace ExcelToDbTool
 {
-    public partial class Form1 : Form
+    public partial class ExcelToDbToolForm : Form
     {
         List<string> tableNames = [];
 
-        public Form1()
+        public ExcelToDbToolForm()
         {
             InitializeComponent();
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
@@ -33,7 +33,7 @@ namespace ExcelToDbTool
             {
                 Directory.Delete(outPath, true);
             }
-            
+
             Directory.CreateDirectory(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "temp"));
 
             using (var package = new ExcelPackage(new FileInfo(filePath)))
@@ -190,7 +190,7 @@ namespace ExcelToDbTool
             try
             {
                 string outputPath = csvOutputPath.Text;
-                if (string.IsNullOrEmpty(outputPath) )
+                if (string.IsNullOrEmpty(outputPath))
                 {
                     outputPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "output");
                 }
@@ -310,6 +310,23 @@ namespace ExcelToDbTool
 
             MessageBox.Show("The execution was successful.");
         }
+        private void excelSelceButton_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                // 设置文件过滤：Excel文件
+                openFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
+                openFileDialog.Title = "选择Excel文件";
+                openFileDialog.Multiselect = false; // 单文件选择
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+
+                    excelTextBox.Text = filePath;
+                }
+            }
+        }
 
         public static List<string> ReadFileWithEncoding(string filePath, Encoding encoding)
         {
@@ -326,23 +343,6 @@ namespace ExcelToDbTool
             }
 
             return lines;
-        }
-
-        static bool IsDateTimeOffsetFormat(string input)
-        {
-            // 正则表达式，匹配格式为 "2021-11-17 00:00:00.0000000 +09:00" 的字符串
-            string pattern = @"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{7} [+\-]\d{2}:\d{2}$";
-            return Regex.IsMatch(input, pattern);
-        }
-
-        static bool IsAllDigits(string input)
-        {
-            if (string.IsNullOrEmpty(input))
-            {
-                return false;
-            }
-
-            return Regex.IsMatch(input, @"^\d+$");
         }
 
         static string? WriteFileWithEncoding(List<string> lines, string filePath, Encoding encoding)
@@ -368,6 +368,23 @@ namespace ExcelToDbTool
                 return ex.Message;
             }
             return null;
+        }
+
+        static bool IsDateTimeOffsetFormat(string input)
+        {
+            // 正则表达式，匹配格式为 "2021-11-17 00:00:00.0000000 +09:00" 的字符串
+            string pattern = @"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{7} [+\-]\d{2}:\d{2}$";
+            return Regex.IsMatch(input, pattern);
+        }
+
+        static bool IsAllDigits(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return false;
+            }
+
+            return Regex.IsMatch(input, @"^\d+$");
         }
     }
 }
