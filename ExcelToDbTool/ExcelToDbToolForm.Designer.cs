@@ -47,9 +47,11 @@
             distanceLabel = new Label();
             excelControl = new TabControl();
             tabPage1 = new TabPage();
+            outpathSelectButton = new Button();
             commonTableCheckBox = new CheckBox();
             excelSelceButton = new Button();
             tabPage2 = new TabPage();
+            InputSelectButton = new Button();
             inputLabel = new Label();
             inputBox = new TextBox();
             button1 = new Button();
@@ -63,6 +65,7 @@
             endFlagLabel = new Label();
             endTextBox = new TextBox();
             panel1 = new Panel();
+            dbOutputButton = new Button();
             excelControl.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -234,6 +237,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(outpathSelectButton);
             tabPage1.Controls.Add(excelTextBox);
             tabPage1.Controls.Add(commonTableCheckBox);
             tabPage1.Controls.Add(excelSelceButton);
@@ -250,6 +254,17 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Excel";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // outpathSelectButton
+            // 
+            outpathSelectButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            outpathSelectButton.Location = new Point(504, 133);
+            outpathSelectButton.Name = "outpathSelectButton";
+            outpathSelectButton.Size = new Size(75, 23);
+            outpathSelectButton.TabIndex = 15;
+            outpathSelectButton.Text = "选择";
+            outpathSelectButton.UseVisualStyleBackColor = true;
+            outpathSelectButton.Click += outpathSelectButton_Click;
             // 
             // commonTableCheckBox
             // 
@@ -274,6 +289,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(InputSelectButton);
             tabPage2.Controls.Add(inputLabel);
             tabPage2.Controls.Add(inputBox);
             tabPage2.Controls.Add(button1);
@@ -284,6 +300,17 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "File";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // InputSelectButton
+            // 
+            InputSelectButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            InputSelectButton.Location = new Point(497, 63);
+            InputSelectButton.Name = "InputSelectButton";
+            InputSelectButton.Size = new Size(75, 23);
+            InputSelectButton.TabIndex = 20;
+            InputSelectButton.Text = "选择";
+            InputSelectButton.UseVisualStyleBackColor = true;
+            InputSelectButton.Click += InputSelectButton_Click;
             // 
             // inputLabel
             // 
@@ -314,6 +341,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(dbOutputButton);
             tabPage3.Controls.Add(tableNamesLabel);
             tabPage3.Controls.Add(deleteTableCheckBox);
             tabPage3.Controls.Add(button3);
@@ -426,6 +454,17 @@
             panel1.Size = new Size(606, 645);
             panel1.TabIndex = 21;
             // 
+            // dbOutputButton
+            // 
+            dbOutputButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            dbOutputButton.Location = new Point(505, 12);
+            dbOutputButton.Name = "dbOutputButton";
+            dbOutputButton.Size = new Size(75, 23);
+            dbOutputButton.TabIndex = 21;
+            dbOutputButton.Text = "选择";
+            dbOutputButton.UseVisualStyleBackColor = true;
+            dbOutputButton.Click += dbOutputButton_Click;
+            // 
             // ExcelToDbToolForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -482,5 +521,8 @@
         private Panel panel1;
         private Button excelSelceButton;
         private Label tableNamesLabel;
+        private Button outpathSelectButton;
+        private Button InputSelectButton;
+        private Button dbOutputButton;
     }
 }

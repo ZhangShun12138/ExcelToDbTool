@@ -328,6 +328,62 @@ namespace ExcelToDbTool
             }
         }
 
+        private void outpathSelectButton_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+            {
+                folderBrowserDialog.Description = "请选择文件夹"; // 对话框描述
+                folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer; // 初始目录
+                // 可以设置SelectedPath，这样打开时会定位到该目录
+                // folderBrowserDialog.SelectedPath = @"C:\";
+
+                // 显示对话框并获取结果
+                DialogResult result = folderBrowserDialog.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowserDialog.SelectedPath))
+                {
+                    // 在这里处理选择的文件夹路径，例如显示在文本框或标签中
+                    outputPathTextBox.Text = folderBrowserDialog.SelectedPath;
+                }
+            }
+        }
+
+        private void InputSelectButton_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+            {
+                folderBrowserDialog.Description = "请选择文件夹"; // 对话框描述
+                folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer; // 初始目录
+
+                // 显示对话框并获取结果
+                DialogResult result = folderBrowserDialog.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowserDialog.SelectedPath))
+                {
+                    // 在这里处理选择的文件夹路径，例如显示在文本框或标签中
+                    inputBox.Text = folderBrowserDialog.SelectedPath;
+                }
+            }
+        }
+
+        private void dbOutputButton_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+            {
+                folderBrowserDialog.Description = "请选择文件夹"; // 对话框描述
+                folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer; // 初始目录
+
+                // 显示对话框并获取结果
+                DialogResult result = folderBrowserDialog.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowserDialog.SelectedPath))
+                {
+                    // 在这里处理选择的文件夹路径，例如显示在文本框或标签中
+                    csvOutputPath.Text = folderBrowserDialog.SelectedPath;
+                }
+            }
+        }
+
         public static List<string> ReadFileWithEncoding(string filePath, Encoding encoding)
         {
             List<string> lines = new List<string>();
