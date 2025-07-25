@@ -96,7 +96,7 @@ namespace ExcelToDbTool
                         return;
                     }
 
-                    sqls.Add(@$"BULK INSERT {textB} FROM '{outPath}\{textB}.csv' WITH (FIELDTERMINATOR = ',', ROWTERMINATOR = '0x0D0A', CODEPAGE = '932');");
+                    sqls.Add(@$"BULK INSERT {textB} FROM '{outPath}\{textB}.csv' WITH (FIELDTERMINATOR = ',', ROWTERMINATOR = '0x0D0A', CODEPAGE = '65001');");
                 }
 
                 string connectionString = $"Data Source={dataSourceTextBox.Text};Database={databaseTextBox.Text};TrustServerCertificate=true;uid={uidTextBox.Text}; pwd={pwdTextBox.Text}; MultipleActiveResultSets=true;Encrypt=False;";
@@ -152,7 +152,7 @@ namespace ExcelToDbTool
                 foreach (string file in csvFiles)
                 {
                     string tableName = Path.GetFileNameWithoutExtension(file);
-                    sqls.Add(@$"BULK INSERT {tableName} FROM '{file}' WITH (FIELDTERMINATOR = ',', ROWTERMINATOR = '0x0D0A', CODEPAGE = '932');");
+                    sqls.Add(@$"BULK INSERT {tableName} FROM '{file}' WITH (FIELDTERMINATOR = ',', ROWTERMINATOR = '0x0D0A', CODEPAGE = '65001');");
                     Console.WriteLine(file);
                 }
 
@@ -207,7 +207,7 @@ namespace ExcelToDbTool
                 foreach (string tableName in tableNames)
                 {
                     // 构建 bcp 命令行参数
-                    string arguments = @$"{databaseTextBox.Text}.dbo.{tableName} out {outputPath}\{tableName}.csv -c -t, -S {dataSourceTextBox.Text} -U {uidTextBox.Text} -P {pwdTextBox.Text} -C 932";
+                    string arguments = @$"{databaseTextBox.Text}.dbo.{tableName} out {outputPath}\{tableName}.csv -c -t, -S {dataSourceTextBox.Text} -U {uidTextBox.Text} -P {pwdTextBox.Text} -C 65001";
 
                     // 创建 ProcessStartInfo 对象
                     ProcessStartInfo startInfo = new ProcessStartInfo
