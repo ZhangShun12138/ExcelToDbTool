@@ -405,7 +405,17 @@ namespace ExcelToDbTool
         {
             try
             {
-                string directory = Path.GetDirectoryName(filePath)!;
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    return "File path cannot be empty or null";
+                }
+
+                string? directory = Path.GetDirectoryName(filePath);
+                if (string.IsNullOrEmpty(directory))
+                {
+                    return "Invalid file path - cannot determine directory";
+                }
+
                 if (!Directory.Exists(directory))
                 {
                     Directory.CreateDirectory(directory);
